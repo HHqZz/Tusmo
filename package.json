@@ -1,0 +1,13 @@
+{
+  "name": "com.tusmo.game",
+  "displayName": "Tusmo",
+  "version": "1.0.0",
+  "unity": "2021.3",
+  "description": "Tusmo - Endless Runner with Multiple Game Modes",
+  "keywords": [
+    "game",
+    "endless-runner",
+    "modes"
+  ],
+  "category": "games"
+}
