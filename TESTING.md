@@ -4,7 +4,7 @@
 
 ### 1. Editor Testing (Fastest)
 ```
-1. Open Unity project
+1. Open Unity 6.4 (6000.4.6f1) project
 2. Create new scene: Assets > Create > Scene (name: GameScene)
 3. Add to scene:
    - Empty GameObject "GameManager"

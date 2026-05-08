@@ -18,7 +18,7 @@ A Unity-based endless runner featuring 10 different game modes with smooth trans
 ## Quick Start
 
 ### Prerequisites
-- Unity 2021.3 LTS or later
+- Unity 6.4 (6000.4.6f1) or later
 - TextMeshPro (comes with Unity)
 
 ### Setup Instructions
@@ -29,7 +29,7 @@ A Unity-based endless runner featuring 10 different game modes with smooth trans
    git clone https://github.com/HHqZz/Tusmo.git
    cd Tusmo
    
-   # Open in Unity
+   # Open in Unity 6.4 (6000.4.6f1)
    ```
 
 2. **Run setup script (optional)**

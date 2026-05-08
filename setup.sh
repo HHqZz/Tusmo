@@ -14,11 +14,11 @@ cd "$TUSMO_DIR"
 # Check if Unity is installed
 if ! command -v unity &> /dev/null; then
     echo "⚠️  Unity Editor not found in PATH"
-    echo "Please install Unity 2021.3 LTS or later"
+    echo "Please install Unity 6.4 (6000.4.6f1) or later"
     echo ""
     echo "Manual setup steps:"
     echo "1. Open Unity Hub"
-    echo "2. Create new project with Unity 2021.3 LTS"
+    echo "2. Create new project with Unity 6.4 (6000.4.6f1)"
     echo "3. Copy the Assets/Scripts folder to your project"
     echo "4. Follow TESTING.md for scene setup"
     exit 1
