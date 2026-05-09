@@ -67,31 +67,3 @@ public class ObjectPool : MonoBehaviour {
     }
 
 }
-
-            if (!obj.activeInHierarchy) {
-
-                obj.SetActive(true);
-
-                return obj;
-
-            }
-
-        }
-
-        // If none available, create new
-
-        GameObject newObj = Instantiate(prefab);
-
-        pool.Add(newObj);
-
-        return newObj;
-
-    }
-
-    public void ReturnObject(GameObject obj) {
-
-        obj.SetActive(false);
-
-    }
-
-}
