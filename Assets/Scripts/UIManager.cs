@@ -1,13 +1,13 @@
+using System;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance { get; private set; }
 
     [Header("UI Elements")]
-    public Text scoreText;
-    public Text modeText;
+    public GameObject scoreObject;
+    public GameObject modeObject;
     public GameObject gameOverPanel;
 
     private int currentScore = 0;
@@ -37,18 +37,12 @@ public class UIManager : MonoBehaviour
     public void UpdateScore(int score)
     {
         currentScore = score;
-        if (scoreText != null)
-        {
-            scoreText.text = "Score: " + score.ToString();
-        }
+        SetText(scoreObject, "Score: " + score.ToString());
     }
 
     public void UpdateMode(string modeName)
     {
-        if (modeText != null)
-        {
-            modeText.text = "Mode: " + modeName;
-        }
+        SetText(modeObject, "Mode: " + modeName);
     }
 
     public void ShowGameOver()
@@ -70,5 +64,44 @@ public class UIManager : MonoBehaviour
     public void AddScore(int points)
     {
         UpdateScore(currentScore + points);
+    }
+
+    private void SetText(GameObject target, string value)
+    {
+        if (target == null)
+            return;
+
+        var component = GetTextComponent(target);
+        if (component == null)
+            return;
+
+        var textProperty = component.GetType().GetProperty("text");
+        if (textProperty != null && textProperty.CanWrite)
+        {
+            textProperty.SetValue(component, value);
+        }
+    }
+
+    private Component GetTextComponent(GameObject target)
+    {
+        var typeNames = new[]
+        {
+            "TMPro.TextMeshProUGUI, Unity.TextMeshPro",
+            "UnityEngine.UI.Text, UnityEngine.UI",
+            "UnityEngine.UIElements.Label, UnityEngine.UIElements"
+        };
+
+        foreach (var typeName in typeNames)
+        {
+            var type = Type.GetType(typeName);
+            if (type == null)
+                continue;
+
+            var component = target.GetComponent(type);
+            if (component != null)
+                return component;
+        }
+
+        return null;
     }
 }
