@@ -1,13 +1,13 @@
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance { get; private set; }
 
     [Header("UI Elements")]
-    public TMP_Text scoreText;
-    public TMP_Text modeText;
+    public Text scoreText;
+    public Text modeText;
     public GameObject gameOverPanel;
 
     private int currentScore = 0;

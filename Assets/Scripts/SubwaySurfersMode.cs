@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class SubwaySurfersMode : GameModeBase
 {
-    public float speed = 10f;
-
     private int currentLane = 1; // 0: left, 1: middle, 2: right
     private float laneWidth = 3f;
     private float obstacleSpawnZ = 50f;

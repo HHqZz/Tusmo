@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class TempleRunMode : GameModeBase
 {
-    public float speed = 10f;
-
     private Vector3 direction = Vector3.forward;
     private float turnTimer = 0f;
     private bool isTurning = false;
